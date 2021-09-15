@@ -16,6 +16,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+
+// Add the update client file to manage updates.
+require_once(trailingslashit(plugin_dir_path(__FILE__)) . 'includes/UpdateClient.class.php');
+
 /**
  * Current plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
