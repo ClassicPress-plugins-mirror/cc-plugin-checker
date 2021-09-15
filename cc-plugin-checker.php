@@ -25,7 +25,7 @@ require_once(trailingslashit(plugin_dir_path(__FILE__)) . 'includes/UpdateClient
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CC_PLUGIN_CHECKER_VERSION', '1.2.0' );
+define( 'CC_PLUGIN_CHECKER_VERSION', '1.2.1' );
 
 /**
  * Define the Plugin basename
