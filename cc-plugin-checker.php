@@ -6,7 +6,7 @@
  *
  * Plugin Name: CC Plugin Checker
  * Description: Check your WC plugins are compatible with Classic Commerce before migrating your site
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Alan Coggins, bedas
  * Author URI: https://simplycomputing.com.au
  **/
