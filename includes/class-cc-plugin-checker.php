@@ -171,7 +171,7 @@ class CC_Plugin_Checker {
 			</style>
 			<br />
 			<h1>' . esc_html__( 'Check Your WC/CC Plugin Compatibility', 'cc-plugin-checker' ) . '</h1>
-			<p>' . esc_html__( 'Classic Commerce was forked from WooCommerce 3.5.3.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Any plugins with a rating of "WC requires at least" that is more than 3.5.3 may not work with Classic Commerce.', 'cc-plugin-checker' ) . '</p>
+			<p>' . esc_html__( 'Classic Commerce was forked from WooCommerce 3.5.3.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Any plugins with a rating of "WC requires at least" that is more than 3.5.3 may not work with Classic Commerce.', 'cc-plugin-checker' ) . esc_html__( 'Note: WC or CC needs to be activated before WC tags will be displayed.', 'cc-plugin-checker' ) . '</p>
 			<table>
 			<tr>
 			<th>' . esc_html__( 'Plugin name', 'cc-plugin-checker' ) . '</th>
