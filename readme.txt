@@ -3,7 +3,7 @@ Contributors: Alan Coggins, bedas
 Tags: classic commerce, woocommerce, compatibility
 Requires at least: 4.9.15
 Tested up to: 5.8.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,9 @@ Any plugins with declaring "WC requires at least" above 3.5.3 may not work with 
 This plugin helps you scan the installed Plugins on your website, to spot them easily.
 
 == Changelog ==
+
+= 1.2.1 =
+* Add extra line for case where neither WC or CC is activated
 
 = 1.2.0 =
 * Add proper uninstall hook
