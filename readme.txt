@@ -1,9 +1,10 @@
 === Classic Commerce Plugin Checker ===
-Contributors: Alan Coggins, bedas
-Tags: classic commerce, woocommerce, compatibility
-Requires at least: 4.9.15
-Tested up to: 5.8.1
-Stable tag: 1.2.1
+Plugin URI: https://simplycomputing.com.au/cc-plugin-checker/
+Contributors: ozfiddler, smilebeda
+Tags: classic commerce, woocommerce, compatibility, plugin
+Requires: 1.0.0
+Tested: 1.3.0
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
