@@ -18,6 +18,9 @@ This plugin helps you scan the installed Plugins on your website, to spot them e
 
 == Changelog ==
 
+= 1.2.2 =
+* Update readme file for CP directory requirements
+
 = 1.2.1 =
 * Add extra line for case where neither WC or CC is activated
 
