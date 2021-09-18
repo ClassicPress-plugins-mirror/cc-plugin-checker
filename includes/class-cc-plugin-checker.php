@@ -148,8 +148,17 @@ class CC_Plugin_Checker {
 		}
 
 		echo '<style>
+
+			table {
+				border-spacing: 0px;
+				border:1px solid #D2DDD4;
+			}
+
+			table tr td, table tr th {
+				border:1px solid #D2DDD4;
+			}
+
 			td, th {
-			border: 1px solid #ddd;
 			padding: 6px;
 			font-size: 16px;
 			}
@@ -171,7 +180,7 @@ class CC_Plugin_Checker {
 			</style>
 			<br />
 			<h1>' . esc_html__( 'Check Your WC/CC Plugin Compatibility', 'cc-plugin-checker' ) . '</h1>
-			<p>' . esc_html__( 'Classic Commerce was forked from WooCommerce 3.5.3.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Any plugins with a rating of "WC requires at least" that is more than 3.5.3 may not work with Classic Commerce.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Note: WC or CC needs to be activated before WC tags will be displayed.', 'cc-plugin-checker' ) . '</p>
+			<p>' . esc_html__( 'Classic Commerce was forked from WooCommerce 3.5.3.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Any plugins with a rating of "WC requires at least" that is more than 3.5.3 may not work with Classic Commerce.', 'cc-plugin-checker' ) . '</p>
 			<table>
 			<tr>
 			<th>' . esc_html__( 'Plugin name', 'cc-plugin-checker' ) . '</th>
@@ -184,11 +193,19 @@ class CC_Plugin_Checker {
 
 		foreach ( $plugin as $key => $plug ) {
 
-			$plugin_details = get_plugin_data( WP_PLUGIN_DIR . '/' . $key );
-			$plugin_name = isset( $plugin_details['Name'] ) && ! empty( $plugin_details['Name'] ) ? $plugin_details['Name'] : __( 'Unknown Plugin', 'cc-plugin-checker' );
+			$plugin_path = WP_PLUGIN_DIR . '/' . $key;
+
+			$plugin_details = get_file_data( $plugin_path, array(
+						'Plugin Name'          => 'Plugin Name',
+						'Version'              => 'Version',
+						'WC requires at least' => 'WC requires at least',
+						'WC tested up to'      => 'WC tested up to',
+					) );
+
+			$plugin_name = isset( $plugin_details['Plugin Name'] ) && ! empty( $plugin_details['Plugin Name'] ) ? $plugin_details['Plugin Name'] : __( 'Unknown plugin', 'cc-plugin-checker' );
 			$plugin_version = isset( $plugin_details['Version'] ) && ! empty( $plugin_details['Version'] ) ? $plugin_details['Version'] : __( 'Unknown Version', 'cc-plugin-checker' );
-			$wc_requires_least = isset( $plugin_details['WC requires at least'] ) && ! empty( $plugin_details['WC requires at least'] ) ? $plugin_details['WC requires at least'] : __( 'No WC Tag', 'cc-plugin-checker' );
-			$wc_tested_to = isset( $plugin_details['WC tested up to'] ) && ! empty( $plugin_details['WC tested up to'] ) ? $plugin_details['WC tested up to'] : __( 'No WC Tag', 'cc-plugin-checker' );
+			$wc_requires_least = isset( $plugin_details['WC requires at least'] ) && ! empty( $plugin_details['WC requires at least'] ) ? $plugin_details['WC requires at least'] : __( 'No WC tag', 'cc-plugin-checker' );
+			$wc_tested_to = isset( $plugin_details['WC tested up to'] ) && ! empty( $plugin_details['WC tested up to'] ) ? $plugin_details['WC tested up to'] : __( 'No WC tag', 'cc-plugin-checker' );
 			$span_requires = isset( $plugin_details['WC requires at least'] ) && ! empty( $plugin_details['WC requires at least'] ) ? 'exists' : 'not_exists';
 			$span_tested = isset( $plugin_details['WC tested up to'] ) && ! empty( $plugin_details['WC tested up to'] ) ? 'exists' : 'not_exists';
 

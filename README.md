@@ -12,5 +12,5 @@ A Simple plugin to check WC plugin compatibility with Classic Commerce
 ### Description
 
 Classic Commerce was forked from WooCommerce 3.5.3.
-Any plugins with declaring "WC requires at least" above 3.5.3 may not work with Classic Commerce.
+Any plugins declaring "WC requires at least" above 3.5.3 may not work with Classic Commerce.
 This plugin helps you scan the installed Plugins on your website, to spot them easily.
