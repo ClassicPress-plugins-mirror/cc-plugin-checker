@@ -4,7 +4,7 @@ https://simplycomputing.com.au
 
 mail@simplycomputing.work
 
-Written by Alan Coggins
+Written by ozfiddler, smilebeda
 
 
 A Simple plugin to check WC plugin compatibility with Classic Commerce

@@ -1,7 +1,7 @@
 === Classic Commerce Plugin Checker ===
 Plugin URI: https://simplycomputing.com.au/cc-plugin-checker/
 Contributors: ozfiddler, smilebeda
-Tags: classic commerce, woocommerce, compatibility, plugin
+Tags: classic commerce, woocommerce, compatibility
 Requires: 1.0.0
 Tested: 1.3.0
 Requires PHP: 7.0
