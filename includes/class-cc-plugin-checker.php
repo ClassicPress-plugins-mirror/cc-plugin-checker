@@ -175,12 +175,15 @@ class CC_Plugin_Checker {
 				font-size: 16px;
 			}
 			span.not_exists {
-				color: #b2b2b2;
+				color: #929292;
+			}
+			span.warning {
+				color: red;
 			}
 			</style>
 			<br />
 			<h1>' . esc_html__( 'Check Your WC/CC Plugin Compatibility', 'cc-plugin-checker' ) . '</h1>
-			<p>' . esc_html__( 'Classic Commerce was forked from WooCommerce 3.5.3.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Any plugins with a rating of "WC requires at least" that is more than 3.5.3 may not work with Classic Commerce.', 'cc-plugin-checker' ) . '</p>
+			<p>' . esc_html__( 'Classic Commerce was forked from WooCommerce 3.5.3.', 'cc-plugin-checker' ) . '<br />' . esc_html__( 'Any plugins with a rating of "WC requires at least" that is more than 3.5.3 may not work with Classic Commerce.', 'cc-plugin-checker' ). '<br />' . esc_html__( 'Plugins that may not be compatible are shown in red and will need further investigation and testing.', 'cc-plugin-checker' ) . '</p>
 			<table>
 			<tr>
 			<th>' . esc_html__( 'Plugin name', 'cc-plugin-checker' ) . '</th>
@@ -204,15 +207,16 @@ class CC_Plugin_Checker {
 
 			$plugin_name = isset( $plugin_details['Plugin Name'] ) && ! empty( $plugin_details['Plugin Name'] ) ? $plugin_details['Plugin Name'] : __( 'Unknown plugin', 'cc-plugin-checker' );
 			$plugin_version = isset( $plugin_details['Version'] ) && ! empty( $plugin_details['Version'] ) ? $plugin_details['Version'] : __( 'Unknown Version', 'cc-plugin-checker' );
-			$wc_requires_least = isset( $plugin_details['WC requires at least'] ) && ! empty( $plugin_details['WC requires at least'] ) ? $plugin_details['WC requires at least'] : __( 'No WC tag', 'cc-plugin-checker' );
-			$wc_tested_to = isset( $plugin_details['WC tested up to'] ) && ! empty( $plugin_details['WC tested up to'] ) ? $plugin_details['WC tested up to'] : __( 'No WC tag', 'cc-plugin-checker' );
+			$wc_requires_least = isset( $plugin_details['WC requires at least'] ) && ! empty( $plugin_details['WC requires at least'] ) ? $plugin_details['WC requires at least'] : __( ' &ndash; ', 'cc-plugin-checker' );
+			$wc_tested_to = isset( $plugin_details['WC tested up to'] ) && ! empty( $plugin_details['WC tested up to'] ) ? $plugin_details['WC tested up to'] : __( ' &ndash; ', 'cc-plugin-checker' );
 			$span_requires = isset( $plugin_details['WC requires at least'] ) && ! empty( $plugin_details['WC requires at least'] ) ? 'exists' : 'not_exists';
 			$span_tested = isset( $plugin_details['WC tested up to'] ) && ! empty( $plugin_details['WC tested up to'] ) ? 'exists' : 'not_exists';
+			$span_requires = version_compare($plugin_details['WC requires at least'], '3.5.3', '>') ? 'warning' : $span_requires;
 
 			echo '<tbody>
 				<tr>
-				<td>' . esc_html( $plugin_name ) . '</td>
-				<td>' . esc_html( $plugin_version ) . '</td>
+				<td><span class="' . esc_attr( $span_requires ) . '">' . esc_html( $plugin_name ) . '</span></td>
+				<td><span class="' . esc_attr( $span_tested ) . '">' . esc_html( $plugin_version ) . '</span></td>
 				<td><span class="' . esc_attr( $span_requires ) . '">' . esc_html( $wc_requires_least ) . '</span></td>
 				<td><span class="' . esc_attr( $span_tested ) . '">' . esc_html( $wc_tested_to ) . '</span></td>
 				</tr>';
