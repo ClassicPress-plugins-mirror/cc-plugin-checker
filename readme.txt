@@ -18,6 +18,9 @@ This plugin helps you scan the installed Plugins on your website, to spot them e
 
 == Changelog ==
 
+= 1.2.4 =
+* Add check for plugins above WC 3.5.3 and make text red for clearer alerts
+
 = 1.2.3 =
 * Change function so that WC/CC not required to be activated
 * Remove WC/CC activation check and warning message
